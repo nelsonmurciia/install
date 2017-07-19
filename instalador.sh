@@ -16,31 +16,31 @@ logMessage () {
 
 echo ""
 echo " ============================================================"
-echo "                    GUNBOT 3.3.2 SETUP started"
+echo "           Instalador TraderBot - DreamersTraders.com
 echo ""
-echo "                This will take a few seconds"
+echo "                Esto tomará algunos minutos"
 echo ""
 echo " ============================================================"
 echo ""
 
-logMessage "(1/6) Update the base system"
+logMessage "(1/6) Actualizando la Base del sistema"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apt-get -qq update > /dev/null 2>&1
 
 
-logMessage "(2/6) Install nodejs 6.x"
+logMessage "(2/6) Instalando nodejs 6.x"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 curl -qsL https://deb.nodesource.com/setup_6.x | bash - > /dev/null 2>&1
 apt-get -y -qq install nodejs > /dev/null 2>&1
 
 
-logMessage "(3/6) Install tools"
+logMessage "(3/6) Instalando Herramientas"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 apt-get -y -qq install unzip > /dev/null 2>&1
 npm install -g pm2 yo@1.8.5 generator-gunbot gunbot-monitor > /dev/null 2>&1
 
 
-logMessage "(4/6) Install GUNBOT"
+logMessage "(4/6) Instalando TraderBot"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 wget -q https://github.com/GuntharDeNiro/BTCT/releases/download/${GUNBOT_GITHUB_FOLDER_NAME}/${GUNBOT_GITHUB_FILE_NAME}.zip -P /opt/
 unzip -o -qq /opt/${GUNBOT_GITHUB_FILE_NAME}.zip -d /opt/unzip-tmp
@@ -64,7 +64,7 @@ chmod +x /opt/gunbot/gunthy-*
 
 
 
-logMessage "(5/6) Add GUNBOT aliases"
+logMessage "(5/6) Agregando los comandos"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 echo "" >> ~/.bashrc
 echo "# GUNBOT ALIASES" >> ~/.bashrc
@@ -78,7 +78,7 @@ echo "alias gstop='pm2 stop'" >> ~/.bashrc
 
 
 
-logMessage "(6/6) Init generator"
+logMessage "(6/6) Generador de archivos"
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Create folder for yeoman.
 chmod g+rwx /root
@@ -105,9 +105,10 @@ chmod g+rw /root/.pm2/*
 
 echo ""
 echo " ============================================================"
-echo "                   GUNBOT SETUP complete!"
+echo "                   Configuración completa!"
 echo ""
-echo "          Please run this command to init the GUNBOT:"
+echo "         Por favor corra los siguientes comandos "
+echo "                 para iniciar el TraderBot:"
 echo "                           gcd"
 echo "                           ginit"
 echo ""
